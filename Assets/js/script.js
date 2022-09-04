@@ -1,8 +1,11 @@
 var startArea = document.getElementById("start");
+var quizArea = document.getElementById("quizQs");
 var startBtn = document.getElementById("startBtn");
     startBtn.addEventListener("click", function(){
         startArea.style.display = "none";
-    })
+        quizArea.style.display = "block";
+    });
+
 // Questions:
 //     "What is the syntax for an if statement?"
 //     "Which javascript data type is not an actual data type?"
