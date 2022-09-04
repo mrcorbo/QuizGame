@@ -1,11 +1,25 @@
 var startArea = document.getElementById("start");
 var quizArea = document.getElementById("quizQs");
 var startBtn = document.getElementById("startBtn");
+var timerEl = document.getElementById("timer");
+var timeLeft = 10; 
+
 startBtn.addEventListener("click", function () {
     startArea.style.display = "none";
     quizArea.style.display = "block";
     displayQuestion();
+    startTimer();
 });
+function startTimer(){
+    var timer = setInterval(function(){
+        if (timeLeft>0){
+            timeLeft--;
+            timerEl.innerText="Time left: " + timeLeft;
+        }else {
+            clearInterval(timer);
+        }
+    },1000);
+}
 var questions = [
     {
         questionText: "What is the syntax for an if statement?",
