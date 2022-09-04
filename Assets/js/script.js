@@ -18,8 +18,16 @@ var questions = [
 ]
 var questionNum = 0;
 function displayQuestion() {
-    var qText = document.getElementById("questionText")
-    qText.innerText = questions[questionNum].questionText
+    var qText = document.getElementById("questionText");
+    qText.innerText = questions[questionNum].questionText;
+    var choices = document.getElementById("choices");
+    choices.innerHTML = "";
+    for (var i=0; i<questions[questionNum].choices.length; i++){
+        var button = document.createElement("button");
+        button.innerText = questions[questionNum].choices[i];
+        choices.appendChild(button);
+    }
+
 };
 
 // Questions:
