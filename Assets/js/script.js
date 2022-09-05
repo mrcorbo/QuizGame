@@ -87,5 +87,12 @@ function gameOver(){
     finishArea.appendChild(initials);
     var saveBtn = document.createElement("button");
     saveBtn.innerText = "Save score"
+    saveBtn.addEventListener("click", function(){
+        var savedInitials = initials.value;
+        var score = {initials:savedInitials, score:(correct*25 + timeLeft)};
+        var prevScores = JSON.parse(localStorage.getItem("scores"))|| [];
+        prevScores.push(score);
+        localStorage.setItem("scores", JSON.stringify(prevScores));
+    });
     finishArea.appendChild(saveBtn);
 }
