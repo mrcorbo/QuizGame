@@ -96,3 +96,8 @@ function gameOver(){
     });
     finishArea.appendChild(saveBtn);
 }
+
+function hiScores(){
+    var savedScores = localStorage.getItem("scores", JSON.parse(prevScores));
+    console.log(savedScores);
+}
